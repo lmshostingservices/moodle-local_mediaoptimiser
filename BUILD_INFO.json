@@ -1,0 +1,8 @@
+{
+  "plugin": "local_mediaoptimiser",
+  "version": "1.0.0",
+  "moodleVersion": "202506280001",
+  "builtAt": "2026-06-28T00:00:00Z",
+  "zipTopLevelDir": "mediaoptimiser",
+  "purchaseGroup": "mediaoptimiser"
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/mediaoptimiser/db" VERSION="20250628" COMMENT="XMLDB file for local_mediaoptimiser"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="local_mediaoptimiser_cache" COMMENT="Cached per-file analysis results keyed by Moodle file content hash">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="contenthash" TYPE="char" LENGTH="40" NOTNULL="true"/>
+        <FIELD NAME="mimetype" TYPE="char" LENGTH="100" NOTNULL="true"/>
+        <FIELD NAME="filesize" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"/>
+        <FIELD NAME="imagewidth" TYPE="int" LENGTH="10" NOTNULL="false"/>
+        <FIELD NAME="imageheight" TYPE="int" LENGTH="10" NOTNULL="false"/>
+        <FIELD NAME="impactscore" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"/>
+        <FIELD NAME="recommendations" TYPE="text" NOTNULL="false"/>
+        <FIELD NAME="analysed" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="contenthash_uk" TYPE="unique" FIELDS="contenthash"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>
